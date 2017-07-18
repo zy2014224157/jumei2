@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+.tou{
+	
+	width:100%;
+	height:150px;
+}
+.tou .touk{
+	position:relative;
+	margin-left:300px;
+	margin-top:30px;
+	width:80%;
+	height:133px;
+}
+.tou .jmlogo{
+	position:absolute;
+	font-size:60px;
+	font-family:方正舒体;
+	width:250px;
+	height:80px;
+	margin-top:30px;
+	color:#E31256;
+}
+
+.tou .touk .sads{
+	position:absolute;
+	width:606px;
+	height:133px;
+	margin-left:380px;
+	margin-top:5px;
+}
+.tou .touk .sads .uu{
+	float:right;
+	list-style:none;	
+	
+}
+.tou .touk .sads .uu li .mask1{
+	width:200px;
+	height:20px;
+	position:absolute;
+	bottom:-100px;
+	background:rgba(0,0,0,0.2);
+}
+.tou .touk .sads .uu li:hover .mask1{	
+	bottom:10px;
+	}
+.tou .touk .sads .uu li{
+	float:left;
+	width:200px;
+	height:133px;
+	overflow:hidden;
+}
+
+/*注册*/
+.zhuce{
+	width:100%;
+	height:500px;
+	background-color:white;
+}
+
+.zhuce .zhucebj{
+	width:1000px;
+	height:500px;
+	position:relative;
+	margin-left:325px;
+	margin-top:50px;
+	background-color:white;
+}
+
+.zhuce .zhucek{
+	width:500px;
+	height:350px;
+	background-color:white;
+	position:absolute;
+	margin-left:205px;
+	margin-top:0px;
+	text-align:center;
+}
+
+.zhuce .zhucek  input[type="text"],input[type="password"]{/*输入框的样式*/
+	padding-left:20px;
+	line-height:10px;
+	height:50px;
+	width:100%;
+	margin:5px;
+	border:0.5px solid #CFCFCF;/*去掉输入框默认的边框  */
+	border-bottom:1px solid #CFCFCF;
+}
+
+.zhuce .zhucek .a3{
+	cursor:pointer;
+	display: block;
+	 background-color:#E31256;
+	 height:50px; 
+	 width: 200px; 
+	 color:white;
+	 font-size:20px;
+	margin-left:160px;
+	margin-top:20px;
+	border-radius:5px;
+}
+.zhuce .zhucek .u1{
+	margin-top:20px;
+}
+.zhuce .zhucek .p1{
+	margin-top:40px;
+}
