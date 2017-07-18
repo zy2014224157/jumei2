@@ -20,8 +20,16 @@ public class UserServlet extends HttpServlet {
          if("checkUserName".equals(ff)){
         	 checkUserName(request,response);
          }
-          
+         if("logout".equals(ff)){
+        	 logout(request,response);
+         }
 		
+	}
+
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		request.getSession().setAttribute("user",null);
+		 request.getRequestDispatcher("home.jsp").forward(request, response); 
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

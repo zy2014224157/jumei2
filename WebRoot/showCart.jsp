@@ -52,6 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <span><a href="home.jsp">首页</a></span>
     <c:if test="${not empty sessionScope.user}">
          <span> 欢迎${sessionScope.user.username}</span>
+           <span><a href="UserServlet?flag=logout">退出登录</a></span>
    </c:if>
   
   <c:if test="${empty sessionScope.user}">

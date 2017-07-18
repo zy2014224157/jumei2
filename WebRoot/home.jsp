@@ -75,10 +75,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                <li><a href="register.html" >快速注册</a></li>
               <li>  <c:if test="${not empty sessionScope.user}">
      <span>  欢迎${sessionScope.user.username}</span>
+     <span><a href="UserServlet?flag=logout">退出登录</a></span>
    </c:if>
   
   <c:if test="${empty sessionScope.user}">
     <span> <a href="login.html">请登录</a></span>
+      
   </c:if></li> 
        </ul>
    	 </div>
