@@ -1,0 +1,57 @@
+.cmit_top{
+	margin-top:0px;
+	width:100%;
+	height:100px;
+	background-image:url("../images/ct.png");
+	background-repeat: no-repeat;
+	margin-left:300px;
+}
+.cmit {
+	list-style:none;
+   margin-left:500px;
+   margin-top:30px;
+ margin-top:50px;
+}
+.cfirm{
+	font-size:40px;
+	color:#E31256;
+	 
+}
+label{
+             display: inline-block;/*将行内元素转成行内块状元素  */
+             margin-right: 5px;
+             width: 100px;
+      }
+.cmit li{
+		margin:20px;
+}
+input[type="text"]{
+          padding-left:20px;
+          height:40px;
+          width:200px;
+          margin:5px;
+          border:none;/*去掉输入框默认的边框 */
+          border-bottom: 2px dashed pink;
+      }
+      input[type="text"]:focus{
+         border-bottom: 2px dashed #E31256;
+         outline:none; /*去掉输入框默认的轮廓 */
+         box-shadow:-10px -5px 30px rgba(0,0,0,0.4);
+         /*边框阴影 ：x偏移量  y偏移量  模糊值  阴影颜色 */
+      }
+      .anniu{
+     margin-left:600px; 
+	 margin-top:20px;
+	
+      }
+ .a{
+		cursor:pointer;
+	display: block;
+	 background-color:#E31256;
+	 height:30px; 
+	 width: 90px; 
+	 font-size:15px;
+	 border-radius:5px;
+	float:left;
+	 margin:20px; 
+}

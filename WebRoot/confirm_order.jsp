@@ -9,14 +9,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'confirm_order.jsp' starting page</title>
+    <title>聚美-【极速免税店】</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	
+	 <link rel="stylesheet"  href="css/commit_order.css">
 
   <script  src="js/jquery-1.8.0.js"></script>
   <script>
@@ -31,15 +31,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </script>
   </head>
   <body>
+ 
  <form action="OrderServlet?flag=gomai" method="post">
-               电话 <input type="text" name="telphone">   
-               发货地址<input type="text" name="address">
-               收件人<input type="text" name="uname" value="${sessionScope.user.username}" readonly>      
-                金额 <input id="money" name="money" readonly>
+  <a href="CartServlet?flag=showCart">返回</a> 
+  <div class="cmit_top"></div>
+<ul class="cmit">
+<li class="cfirm">确认订单</li>
+      <li><label for="telphone"> 电话</label>
+      <input type="text" name="telphone">   </li>
+       <li><label for="address">发货地址</label>
+       <input type="text" name="address"> </li>
+         <li> <label for="uname">收件人</label>
+         <input type="text" name="uname" value="${sessionScope.user.username}" readonly> </li>     
+           <li> <label for="money">   金额 </label>
+           <input id="money" type="text" name="money" readonly></li></ul>
+           <div class="anniu">
         <input type="hidden" id="cartids" name="cartids">        
-        <input type="submit" value="提交订单">
-          <input type="reset" value="重置">
+        <input class="a" type="submit" value="提交订单">
+          <input class="a" type="reset" value="取消">
+          </div>
+ 
  </form>
-  <a href="CartServlet?flag=showCart">返回</a>     
   </body>
 </html>
