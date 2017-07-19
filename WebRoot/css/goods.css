@@ -12,6 +12,89 @@
 	font-size: 12px;
 	position:relative;
 }
+.header_top font{
+	line-height:40px;
+	margin-left:150px;
+	float:left;
+	font-size:10px;
+	color:#818181;
+}
+.header_top ul{
+	overflow:hidden;
+	list-style:none;
+	margin:0px;
+	
+}
+.header_top li{
+	height:20px;
+	float:right; 
+	text-align:center;
+	margin-top:10px;
+	line-height:17px;
+	margin-right:50px ;
+	font-size:10px;
+}
+.header_top li span{
+	font-size:15px;
+	color:#EB145A;
+}
+.header_top li a{
+	text-decoration:none;/* 去掉超链接下划线 */
+	color:#818181;
+}
+.header_center {
+    background-color:#FFFFFF;
+	width:100%;
+	height:100px;
+
+	
+}
+.header_center .logo img {
+    width: 155px;
+    height: 56px;    
+    margin-top:20px;
+    margin-left:0px;
+}
+
+
+
+
+
+.header_bottom {
+    background-color:#101010;
+	width:100%;
+	height:40px;
+}
+.header_bottom ul{
+	height:40px;
+	width:1000px;
+	overflow:hidden;
+	list-style:none;
+	text-align:center;
+}
+.header_bottom li{
+	float:left; 
+	text-align:center;
+	margin-top:2px;
+	line-height:40px;
+	margin-right:50px;
+	margin-left:100px;
+}
+.header_bottom li:hover{
+	background-color:#ED145B;
+}
+.header_bottom li a{
+	text-decoration:none;/* 去掉超链接下划线 */
+	color:white;
+	font-size:20px;
+	text-align:center;
+}
+ 
+
+
+
+
+
 .cart{
 	position:absolute;
 	right:30px;
@@ -37,25 +120,29 @@
 	margin-left:100px;
 }
 
+
+
+
+
 .goods_list{
 	list-style:none;
 	overflow:hidden;
 	 margin-top:30px; 
     margin-left:300px;
     position:absolute;
-    
+   
 }
 .goods_list li{
-	 float:left; 
+	float:left;
 	position:relative;
 	margin:15px;
-	border:1px solid #ccc;
-	overflow:hidden;
 	border:2px solid #E93274;
+	overflow:hidden;
+	
 }
 .goods_list li span{
 	font-size:20px;
-	color:#FF3366;
+	color:black;
 }
 .goods_list li .mask{
 	position:absolute;
@@ -64,22 +151,29 @@
 	height:50px;
 	width:100%;
 	transition:all 0.5s ;
-	
+}
+.goods_list li .mask .fz{
+	color:#E93274;
+	font-size:15px;
 }
 .goods_list li img{
 	width:220px;
 	height:240px;
 }
+
+
 .goods_list li  a{
 	text-decoration:none;
-	color:#E93274;
 }
+
 .goods_list li:hover .mask{
-	bottom:200px;
+	bottom:180px;
 	/* transform:rotatey(360deg);  */ 
 }
-.zj{
-	margin-left:1150px;
-	margin-top:0px;
- 
+.goods_list button{
+	
+	height:50px;
+	width:100px;
+	background-color:#ED145B;
+     
 }

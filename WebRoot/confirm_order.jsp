@@ -39,8 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <input type="hidden" id="cartids" name="cartids">        
         <input type="submit" value="提交订单">
           <input type="reset" value="重置">
-      </form>
-      
+ </form>
   <a href="CartServlet?flag=showCart">返回</a>     
   </body>
 </html>

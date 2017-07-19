@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,dao.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
@@ -18,19 +18,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet"  href="css/goods.css">
   </head>
   <body>
-  <div class="header">
-    <c:if test="${not empty sessionScope.user}">
-         <span> 欢迎${sessionScope.user.username}</span>
-           <span><a href="UserServlet?flag=logout">退出登录</a></span>
+  <c:if test="${not empty msg}">
+       <script>
+         alert("${msg}");
+       </script>
    </c:if>
-  <span><a href="home.jsp">首页</a></span>
+   	 <div class="header">
+   	 <div class="header_top">
+   	    <font>欢迎来到聚美！</font>
+   	   <ul class="header_top" id="header_top">
+            <li><a href="home.jsp" >订单查询</a></li>
+              <li><a href="CartServlet?flag=showCart">购物车</a> <li>
+               <li><a href="register.html" >快速注册</a></li>
+              <li>  <c:if test="${not empty sessionScope.user}">
+     <span>  欢迎${sessionScope.user.username}</span>
+     <span><a href="UserServlet?flag=logout">退出登录</a></span>
+   </c:if>
+  
   <c:if test="${empty sessionScope.user}">
-     <span><a href="login.html">请登录</a></span>
-  </c:if>
-   <span class="cart">
-   <a href="CartServlet?flag=showCart"><img src="images/cart.png"/>去购物车结算</a>
-   </span>
-</div>
+    <span> <a href="login.html">请登录</a></span>
+      
+  </c:if></li> 
+       </ul>
+   	 </div>
+   	 	 <div class="header_center">
+   	    <div class="logo"><a href="home.jsp"><img src="images/logo.png"></a></div>
+   	 
+
+   	 </div>
+   	 
+   	 	 <div class="header_bottom">
+
+  <% CatalogDao dao=new CatalogDao();
+     request.setAttribute("catalogList" ,dao.getCatalogs());
+  %>
+  
+  <ul class="hb">
+   <li class="home"><a href="home.jsp">首页</a></li>
+   <c:forEach var="catalog" items="${catalogList}" >
+      <li><a href="GoodsServlet?cid=${catalog.catalogid}&flag=getGoodsBycId">${catalog.catalogname} </a></li>
+   </c:forEach>
+  </ul>  
+   </div>
+   	 
   <div class="back_top"></div>
      <c:if test="${empty goodsList}">
                   未搜索到符合要求的产品
@@ -40,13 +70,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		       <c:forEach var="goods" items="${goodsList}">
 		      <li>
 		         <div class="mask">
-		             <span>商品名：${goods.goodsname}</span>
+		             <span class="fz">商品名：${goods.goodsname}</span>
 		         </div>
 		          <img src="images/${goods.picture }"><br>
 		          <br>
+		          <br>
+		          <br>
 		          <span>￥：${goods.price }</span>
 		             <br>
-		          <a href="CartServlet?gid=${goods.goodsid }&flag=addCart">加入购物车</a>
+		          <button><a href="CartServlet?gid=${goods.goodsid }&flag=addCart">加入购物车</a></button>
 		      </li>                  
 		       </c:forEach>
 		  </ul>        

@@ -19,7 +19,7 @@ public class OrderDao {
 		   //1.连接数据库
 		    con=DBUtil.getCon();
 		   //2.sql语句
-		    String sql="insert into order(subtime,totalmoney,telphone,address,userid) values(?,?,?,?,?)";
+		    String sql="insert into orders(subtime,totalmoney,telphone,address,userid) values(?,?,?,?,?)";
 		   //3.创建statement对象
 		    st=con.prepareStatement(sql,1);
 		      st.setTimestamp(1, order.getSubtime());
@@ -31,19 +31,19 @@ public class OrderDao {
 		     //事务：一致性
 		     con.setAutoCommit(false);//开启事务
 		    
-		     st.execute();
+		     st.executeUpdate();
 		     int orderid=0;//保存自增长的主键值
 		     ResultSet rs=st.getGeneratedKeys();//获取产生的自增长的id
 		     if(rs.next()){
 		    	 orderid=rs.getInt(1) ;
 			 }  
 		     //update cart set orderid=?  where cartid in(1,2,3)
-		     String sql2="update cart set orderid=? where cartid in ?";
+		     String sql2="update cart set orderid=? where cartid in ("+cids+")";
 		     st=con.prepareStatement(sql2);
-		     st.setInt(1, orderid);
+		     st.setInt(1,orderid);
 		     //32,37,38,39   (32,37,38,39)
-		     st.setString(2,"("+cids+")");
-		     st.execute();
+		     //st.setString(2,cids);
+		     st.executeUpdate();
 		     con.commit();//事务提交
 		     result=true;
 		  }catch(Exception e){
@@ -54,6 +54,7 @@ public class OrderDao {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}//事务回滚
+			  
 		  }finally{//释放资源
 			  DBUtil.closeAll(con, null, st);
 		  }
