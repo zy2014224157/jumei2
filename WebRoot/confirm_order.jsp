@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   <body>
  
- <form action="OrderServlet?flag=gomai" method="post">
+ <form action="success.jsp" method="post">
   <a href="CartServlet?flag=showCart">返回</a> 
   <div class="cmit_top"></div>
 <ul class="cmit">
